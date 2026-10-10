@@ -1,12 +1,12 @@
-[--solutionname--] Details
+[quantstream-3f10-ml] Details
 ============================
 
-Generated On: --datetime-- UTC
+Generated On: 2026-10-10 02:51:44 UTC
 
 TML Solution DAG Parameters' Details: User Chosen Parametets
 ----------------------------
 
-STEP 1: Get TML Core Params: `tml_system_step_1_getparams_dag <--step1url-->`_
+STEP 1: Get TML Core Params: `tml_system_step_1_getparams_dag <https://github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/tml_system_step_1_getparams_dag-quantstream-3f10.py>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -14,21 +14,21 @@ STEP 1: Get TML Core Params: `tml_system_step_1_getparams_dag <--step1url-->`_
    * - **User Parameter**
      - **Chosen Value**
    * - solutionname
-     - --solutionname--
+     - quantstream-3f10-ml
    * - solutiontitle
-     - --solutiontitle--
+     - QuantStream AI Mid-Frequency Algorithmic Trading
    * - solutiondescription
-     - --solutiondescription--
+     - This is an awesome real-time Algorithmic Trading solution built by TSS
    * - brokerhost
-     - --brokerhost--
+     - 127.0.0.1
    * - brokerport
-     - --brokerport--
+     - 9092
    * - cloudusername
-     - --cloudusername--
+     - None
    * - ingestdatamethod
-     - --ingestdatamethod--
+     - LOCALFILE
  
-STEP 2: Create Kafka Topics: `tml_system_step_2_kafka_createtopic_dag <--step2url-->`_
+STEP 2: Create Kafka Topics: `tml_system_step_2_kafka_createtopic_dag <https://github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/tml_system_step_2_kafka_createtopic_dag-quantstream-3f10.py>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -36,31 +36,31 @@ STEP 2: Create Kafka Topics: `tml_system_step_2_kafka_createtopic_dag <--step2ur
    * - **User Parameter**
      - **Chosen Value**
    * - companyname
-     - --companyname--
+     - Otics
    * - myname
-     - --myname--
+     - Sebastian
    * - myemail
-     - --myemail--
+     - Sebastian.Maurice
    * - mylocation
-     - --mylocation--
+     - Toronto
    * - replication
-     - --replication--
+     - 1
    * - numpartitions
-     - --numpartitions--
+     - 1
    * - enabletls
-     - --enabletls--
+     - 1
    * - microserviceid
-     - --microserviceid--
+     - 
    * - raw_data_topic
-     - --raw_data_topic--
+     - iot-raw-data
    * - preprocess_data_topic
-     - --preprocess_data_topic--
+     - iot-preprocess,iot-preprocess2
    * - ml_data_topic
-     - --ml_data_topic--
+     - ml-data
    * - prediction_data_topic
-     - --prediction_data_topic--
+     - prediction-data
 
-STEP 3: `Produce to Kafka Topics <--step3url-->`_
+STEP 3: `Produce to Kafka Topics <https://github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/tml_read_LOCALFILE_step_3_kafka_producetotopic_dag-quantstream-3f10.py>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -68,37 +68,37 @@ STEP 3: `Produce to Kafka Topics <--step3url-->`_
    * - **User Parameter**
      - **Chosen Value**
    * - PRODUCETYPE
-     - --PRODUCETYPE--
+     - LOCALFILE
    * - inputfile
-     - --inputfile--
+     - 
    * - TOPIC
-     - --TOPIC--
+     - quantstream-raw-data
    * - PORT
-     - --PORT--
+     - _5050
    * - IDENTIFIER
-     - --IDENTIFIER--
+     - TML solution,
    * - HTTPADDR
-     - --HTTPADDR--
+     - https://
    * - FROMHOST
-     - --FROMHOST--
+     - ('57be83f972a2', '172.17.0.2')
    * - TOHOST
-     - --TOHOST--
+     - 0.0.0.0
    * - CLIENTPORT
-     - --CLIENTPORT--
+     - Not Applicable
    * - TSS_CLIENTPORT
-     - --TSSCLIENTPORT--
+     - Not Applicable
    * - TML_CLIENTPORT
-     - --TMLCLIENTPORT--
+     - Not Applicable
    * - docfolder
-     - --docfolderprocess--
+     - 
    * - doctopic
-     - --doctopic--
+     - 
    * - chunks
-     - --chunks--
+     - 0
    * - docingestinterval
-     - --docingestinterval--
+     - 0
 
-STEP 4: Preprocesing Data: `tml-system-step-4-kafka-preprocess-dag <--step4url-->`_
+STEP 4: Preprocesing Data: `tml-system-step-4-kafka-preprocess-dag <https://github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/tml_system_step_4_kafka_preprocess_dag-quantstream-3f10.py>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -106,37 +106,37 @@ STEP 4: Preprocesing Data: `tml-system-step-4-kafka-preprocess-dag <--step4url--
    * - **User Parameter**
      - **Chosen Value**
    * - raw_data_topic
-     - --raw_data_topic--
+     - iot-raw-data
    * - preprocess_data_topic
-     - --preprocess_data_topic--
+     - iot-preprocess,iot-preprocess2
    * - preprocessconditions
-     - --preprocessconditions--
+     - 
    * - delay
-     - --delay--
+     - 70
    * - maxrows
-     - --maxrows--
+     - 1
    * - array
-     - --array--
+     - 0
    * - saveasarray
-     - --saveasarray--
+     - 1
    * - topicid
-     - --topicid--
+     - -999
    * - rawdataoutput
-     - --rawdataoutput--
+     - 0
    * - asynctimeout
-     - --asynctimeout--
+     - 120
    * - timedelay
-     - --timedelay--
+     - 0
    * - preprocesstypes
-     - --preprocesstypes--
+     - raw
    * - pathtotmlattrs
      - --pathtotmlattrs--
    * - identifier
-     - --identifier--
+     - QuantStream AI Mid-Frequency Algorithmic trading
    * - jsoncriteria
      - --jsoncriteria--
 
-STEP 4a: Preprocesing Data: `tml-system-step-4a-kafka-preprocess-dag <--step4aurl-->`_
+STEP 4a: Preprocesing Data: `tml-system-step-4a-kafka-preprocess-dag <https://github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/tml_system_step_4a_kafka_preprocess_dag-quantstream-3f10.py>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -174,7 +174,7 @@ STEP 4a: Preprocesing Data: `tml-system-step-4a-kafka-preprocess-dag <--step4aur
    * - jsoncriteria
      - --jsoncriteria1--
 
-STEP 4b: Preprocesing Data: `tml-system-step-4b-kafka-preprocess-dag <--step4burl-->`_
+STEP 4b: Preprocesing Data: `tml-system-step-4b-kafka-preprocess-dag <https://github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/tml_system_step_4b_kafka_preprocess_dag-quantstream-3f10.py>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -212,7 +212,7 @@ STEP 4b: Preprocesing Data: `tml-system-step-4b-kafka-preprocess-dag <--step4bur
    * - jsoncriteria
      - --jsoncriteria2--
 
-STEP 4c: Preprocesing Data: `tml-system-step-4c-kafka-preprocess-dag  <--step4curl-->`_
+STEP 4c: Preprocesing Data: `tml-system-step-4c-kafka-preprocess-dag  <https://github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/tml_system_step_4c_kafka_preprocess_dag-quantstream-3f10.py>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -272,7 +272,7 @@ STEP 4c: Preprocesing Data: `tml-system-step-4c-kafka-preprocess-dag  <--step4cu
    * - RTMS Output Github Link
      - `Output Data URL <--rtmsoutputurl-->`_
 
-STEP 5: Entity Based Machine Learning : `tml-system-step-5-kafka-machine-learning-dag <--step5url-->`_
+STEP 5: Entity Based Machine Learning : `tml-system-step-5-kafka-machine-learning-dag <https://github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/tml_system_step_5_kafka_machine_learning_dag-quantstream-3f10.py>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -280,45 +280,45 @@ STEP 5: Entity Based Machine Learning : `tml-system-step-5-kafka-machine-learnin
    * - **User Parameter**
      - **Chosen Value**
    * - preprocess_data_topic
-     - --preprocess_data_topic--
+     - iot-preprocess,iot-preprocess2
    * - ml_data_topic
-     - --ml_data_topic--
+     - ml-data
    * - modelruns
-     - --modelruns--
+     - 50
    * - offset
-     - --offset--
+     - -1
    * - islogistic
-     - --islogistic--
+     - 2
    * - networktimeout
-     - --networktimeout--
+     - 600
    * - modelsearchtuner
-     - --modelsearchtuner--
+     - 90
    * - processlogic
-     - --processlogic--
+     - classification_name=decision_prob:features_X.x1_tick_return_preprocessed_Raw=0.00005,n:features_X.x9_acceleration_preprocessed_Raw=0.00005,n~features_X.x1_tick_return_preprocessed_Raw=-n,-0.00005:features_X.x9_acceleration_preprocessed_Raw=-n,0
    * - dependentvariable
-     - --dependentvariable--
+     - decision
    * - independentvariables
-     - --independentvariables--
+     - features_X.x1_tick_return_preprocessed_Raw,features_X.x2_session_return_preprocessed_Raw,features_X.x4_range_drift_preprocessed_Raw,features_X.x6_realized_volatility_preprocessed_Raw,features_X.x8_sma_distance_preprocessed_Raw,features_X.x9_acceleration_preprocessed_Raw
    * - rollbackoffsets
-     - --rollbackoffsets--
+     - 500
    * - topicid
-     - --topicid--
+     - -999
    * - consumefrom
-     - --consumefrom--
+     - 
    * - fullpathtotrainingdata
-     - --fullpathtotrainingdata--
+     - /rawdata/quantstream
    * - transformtype
-     - --transformtype--
+     - 
    * - sendcoefto
-     - --sendcoefto--
+     - 
    * - coeftoprocess
-     - --coeftoprocess--
+     - 
    * - coefsubtopicnames
-     - --coefsubtopicnames--
+     - 
    * - ML Output Github Link
-     - `Output Data URL <--mloutputurl-->`_
+     - `Output Data URL <https:\/\/github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/mldata/quantstream>`_
 
-STEP 6: Entity Based Predictions: `tml-system-step-6-kafka-predictions-dag <--step6url-->`_
+STEP 6: Entity Based Predictions: `tml-system-step-6-kafka-predictions-dag <https://github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/tml_system_step_6_kafka_predictions_dag-quantstream-3f10.py>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -326,31 +326,31 @@ STEP 6: Entity Based Predictions: `tml-system-step-6-kafka-predictions-dag <--st
    * - **User Parameter**
      - **Chosen Value**
    * - preprocess_data_topic
-     - --preprocess_data_topic--
+     - iot-preprocess,iot-preprocess2
    * - ml_prediction_topic
-     - --ml_prediction_topic--
+     - iot-ml-prediction-results-output
    * - streamstojoin
-     - --streamstojoin--
+     - date,features_X.x1_tick_return,features_X.x2_session_return,features_X.x4_range_drift,features_X.x6_realized_volatility,features_X.x8_sma_distance,features_X.x9_acceleration
    * - inputdata
-     - --inputdata--
+     - 
    * - consumefrom
-     - --consumefrom2--
+     - ml-data
    * - offset
-     - --offset--
+     - -1
    * - delay
-     - --delay--
+     - 70
    * - usedeploy
-     - --usedeploy--
+     - 1
    * - networktimeout
-     - --networktimeout--
+     - 600
    * - maxrows
-     - --maxrows--
+     - 1
    * - topicid
-     - --topicid--
+     - -999
    * - pathtoalgos
-     - --pathtoalgos--
+     - /rawdata/quantstream
 
-STEP 7: Real-Time Visualization: `tml-system-step-7-kafka-visualization-dag <--step7url-->`_
+STEP 7: Real-Time Visualization: `tml-system-step-7-kafka-visualization-dag <https://github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/tml_system_step_7_kafka_visualization_dag-quantstream-3f10.py>`_
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -358,23 +358,23 @@ STEP 7: Real-Time Visualization: `tml-system-step-7-kafka-visualization-dag <--s
    * - **User Parameter**
      - **Chosen Value**
    * - vipervizport
-     - --vipervizport--
+     - 9689
    * - topic
-     - --topic--
+     - iot-preprocess,iot-preprocess2
    * - dashboardhtml
-     - --dashboardhtml--
+     - qs.php
    * - secure
-     - --secure--
+     - 1
    * - offset
-     - --offset--
+     - -1
    * - append
-     - --append--
+     - 0
    * - chip
-     - --chip--
+     - amd64
    * - rollbackoffset
-     - --rollbackoffset--
+     - 400
 
-STEP 8: `tml_system_step_8_deploy_solution_to_docker_dag <--step8url-->`_
+STEP 8: `tml_system_step_8_deploy_solution_to_docker_dag <https://github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/tml_system_step_8_deploy_solution_to_docker_dag-quantstream-3f10.py>`_
 ^^^^^^^^^^^^^^^^^^^^^
 .. list-table::
 
@@ -385,7 +385,7 @@ STEP 8: `tml_system_step_8_deploy_solution_to_docker_dag <--step8url-->`_
    * - Docker Run Command
      - --dockerrun--
 
-STEP 9: `tml_system_step_9_privategpt_qdrant_dag <--step9url-->`_
+STEP 9: `tml_system_step_9_privategpt_qdrant_dag <https://github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/tml_system_step_9_privategpt_qdrant_dag-quantstream-3f10.py>`_
 ^^^^^^^^^^^^^^^^^^^^^
 .. list-table::
 
@@ -400,17 +400,17 @@ STEP 9: `tml_system_step_9_privategpt_qdrant_dag <--step9url-->`_
    * - Qdrant Run Command
      - --qdrantrun--
    * - Consumefrom
-     - --consumefrom--
+     - 
    * - pgpt_data_topic
      - --pgpt_data_topic--
    * - offset
-     - --offset--
+     - -1
    * - rollbackoffset
-     - --rollbackoffset--
+     - 400
    * - topicid
-     - --topicid--
+     - -999
    * - enabletls
-     - --enabletls--
+     - 1
    * - partition
      - --partition--
    * - prompt
@@ -462,7 +462,7 @@ STEP 9: `tml_system_step_9_privategpt_qdrant_dag <--step9url-->`_
    * - mitrejson
      - --mitrejson--
 
-STEP 9b: `tml_system_step_9b_agenticai_dag <--step9burl-->`_
+STEP 9b: `tml_system_step_9b_agenticai_dag <https://github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/tml_system_step_9b_agenticai_dag-quantstream-3f10.py>`_
 ^^^^^^^^^^^^^^^^^^^^^
 .. list-table::
 
@@ -519,11 +519,11 @@ STEP 9b: `tml_system_step_9b_agenticai_dag <--step9burl-->`_
    * - localmodelsfolder
      - --agenticai-localmodelsfolder--
 
-STEP 10: `tml_system_step_10_documentation_dag <--step10url-->`_
+STEP 10: `tml_system_step_10_documentation_dag <https://github.com/smaurice101/raspberrypitss/tree/main/tml-airflow/dags/tml-solutions/quantstream-3f10/tml_system_step_10_documentation_dag_quantstream-3f10_tml-multi-agenticai-iot-3f10-quantstream-3f10.py>`_
 ^^^^^^^^^^^^^^^^^^^^^
 .. list-table::
 
    * - **User Parameter**
      - **Chosen Value**
    * - Solution Documentation URL
-     - --readthedocs--
+     - https://quantstream-3f10-ml.readthedocs.io
